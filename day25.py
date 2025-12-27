@@ -21,7 +21,7 @@ class Duck(Animal):
         print("Quack Quack!")
 
 class AnimalSoundSimulator:
-    def __init__(self):
+    def __init__(self): #__init__ constructor (sınıf ilk oluşturulduğunda çalışır)
         self.animals = []
 
     def add_animal(self, animal):
