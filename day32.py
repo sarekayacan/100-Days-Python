@@ -5,8 +5,8 @@ from PIL import ImageGrab
 
 current_color = "black"
 current_thickness = 2
-actions = []        # Undo için çizilen objeler
-redo_stack = []     # Redo için
+actions = [] # Undo için çizilen objeler
+redo_stack = [] # Redo için
 
 def draw(event):
     x, y = event.x, event.y
@@ -61,7 +61,7 @@ def save_canvas():
         ImageGrab.grab().crop((x, y, x1, y1)).save(file_path)
 
 root = tk.Tk()
-root.title("Drawing Pad (Bonuslu)")
+root.title("Drawing Pad")
 root.geometry("650x650")
 
 canvas = tk.Canvas(
@@ -73,6 +73,7 @@ canvas = tk.Canvas(
     relief="ridge"
 )
 canvas.pack(pady=20)
+
 canvas.bind("<B1-Motion>", draw)
 
 control = tk.Frame(root)
