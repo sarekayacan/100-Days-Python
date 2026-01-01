@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            margin: 0;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        form input {
+            padding: 10px;
+            width: 200px;
+        }
+
+        form button {
+            padding: 10px 15px;
+        }
+
+        .weather-card {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 400px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        img {
+            width: 100px;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+
+        .history {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <h1>🌦️ Weather Dashboard</h1>
+
+    <form method="POST">
+        <input type="text" name="city" placeholder="Şehir adı girin" required>
+        <button type="submit">Get Weather</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if weather %}
+    <div class="weather-card">
+        <h2>{{ weather.city }}</h2>
+        <img src="{{ weather.icon }}">
+        <p><strong>Sıcaklık:</strong> {{ weather.temperature }} °C</p>
+        <p><strong>Durum:</strong> {{ weather.description }}</p>
+        <p><strong>Nem:</strong> {{ weather.humidity }}%</p>
+        <p><strong>Rüzgar:</strong> {{ weather.wind_speed }} m/s</p>
+    </div>
+    {% endif %}
+
+    {% if history %}
+    <div class="history">
+        <h3>🔍 Son Aramalar</h3>
+        <p>{{ history | join(", ") }}</p>
+    </div>
+    {% endif %}
+
+</div>
+</body>
+</html>
