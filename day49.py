@@ -2,7 +2,7 @@
 import requests
 import matplotlib.pyplot as plt
 
-API_KEY = "API_KEY"
+API_KEY = "bcf1017dfd543aac60fad940f1abf3c9"
 BASE_URL_CURRENT = "https://api.openweathermap.org/data/2.5/weather"
 BASE_URL_FORECAST = "https://api.openweathermap.org/data/2.5/forecast"
 
