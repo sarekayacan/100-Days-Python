@@ -1,0 +1,29 @@
+body {
+    font-family: Arial;
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+input {
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+}
+
+button {
+    padding: 10px 20px;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
