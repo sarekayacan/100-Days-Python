@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Blog Yazıları</h1>
+
+<form action="/search">
+    <input type="text" name="q" placeholder="Ara...">
+    <button type="submit">Ara</button>
+</form>
+
+{% for post in posts %}
+<h2>{{ post.title }}</h2>
+<p>{{ post.content }}</p>
+<small>Yazar: {{ post.author }}</small><br>
+<a href="/post/{{ post.id }}">Devamını oku</a>
+<hr>
+{% endfor %}
+
+<div>
+{% if page > 1 %}
+<a href="/?page={{ page - 1 }}">⬅ Önceki</a>
+{% endif %}
+
+{% if page < total_pages %}
+<a href="/?page={{ page + 1 }}">Sonraki ➡</a>
+{% endif %}
+</div>
+{% endblock %}
