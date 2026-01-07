@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Panel</title>
+</head>
+<body>
+
+<h1>Feedback Gönderimleri</h1>
+
+<form method="get">
+    <input type="text" name="q" placeholder="Ara...">
+    <button type="submit">Ara</button>
+</form>
+
+<ul>
+{% for feedback in feedbacks %}
+    <li>
+        <strong>{{ feedback.name }}</strong> ({{ feedback.email }})<br>
+        {{ feedback.message }}
+    </li>
+{% else %}
+    <li>Kayıt bulunamadı</li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
