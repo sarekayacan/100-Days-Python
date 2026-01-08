@@ -47,9 +47,6 @@ def get_weather(city_name, api_key):
     return forecast
 
 def display_forecast(city_name, forecast):
-    """
-    Şehre ait hava tahminini ekrana yazdırır.
-    """
     print(f"\n{city_name.title()} için 3 Günlük Hava Tahmini:\n")
     for day in forecast:
         print(f"{day['Tarih']}: {day['Hava']}, {day['Sıcaklık (°C)']}°C")
