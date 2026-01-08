@@ -29,7 +29,7 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
 accuracy = accuracy_score(y_test, y_pred)
-conf_matrix = confusion_matrix(y_test, y_pred)
+conf_matrix = confusion_matrix(y_test, y_pred, labels=[0,1])  # labels eklendi
 print(f"Model Accuracy: {accuracy:.2f}")
 print("Confusion Matrix:")
 print(conf_matrix)
