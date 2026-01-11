@@ -12,7 +12,6 @@ X_test = np.r_[
     X - 2,
     np.random.uniform(low=-6, high=6, size=(20, 2))
 ]
-
 model = IsolationForest(contamination=0.1, random_state=42)
 model.fit(X_train)
 
